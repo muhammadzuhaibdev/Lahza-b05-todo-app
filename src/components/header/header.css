@@ -1,0 +1,50 @@
+.navbar-brand {
+    letter-spacing: 0.3px;
+}
+
+/* Toggler Button */
+.navbar-toggler {
+    border: 1px solid #475569;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Offcanvas */
+.offcanvas {
+    width: 300px !important;
+    background: #ffffff;
+    color: #101828;
+}
+
+.offcanvas-title {
+    color: #101828;
+}
+
+/* Navigation Links */
+.offcanvas-body .nav-link {
+    color: #475569;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.offcanvas-body .nav-link:hover {
+    background: #f1f5f9;
+    color: #198754;
+}
+
+.offcanvas-body .nav-link.active {
+    background: #e8f5ee;
+    color: #198754;
+}
+
+/* Dashboard Button */
+.navbar .btn-success {
+    border-radius: 8px;
+    font-weight: 500;
+}

@@ -1,36 +1,70 @@
-import React from 'react'
+import './header.css'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
     return (
         <header>
-            <nav className="navbar sm:navbar-expand bg-1 fg-2 navbar-dark">
+            <nav className="navbar navbar-dark">
                 <div className="container">
-                    <a className="navbar-brand" href="#">My Todo APP</a>
-                    <button className="btn-icon navbar-toggler" type="button" data-bs-toggle="drawer" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon" aria-hidden="true"></span>
-                    </button>
-                    <dialog className="drawer drawer-end" tabindex="-1" id="navbarNav" aria-labelledby="navbarNavLabel">
-                        <div className="drawer-header">
-                            <h5 className="drawer-title" id="navbarNavLabel">Menu</h5>
-                            <button type="button" className="btn-close" data-bs-dismiss="drawer" aria-label="Close"></button>
+                    <Link className="navbar-brand fw-bold fs-4" to="/">
+                        My Todo APP
+                    </Link>
+
+                    <div className="d-flex align-items-center gap-3">
+                        <Link to='/dashboard/addTodo'>
+                            <button className="btn btn-success px-4">Dashboard</button>
+                        </Link>
+
+                        {/* Menu Toggle */}
+                        <button
+                            className="navbar-toggler"
+                            type="button"
+                            data-bs-toggle="offcanvas"
+                            data-bs-target="#navbarNav"
+                            aria-controls="navbarNav"
+                            aria-label="Toggle navigation"
+                        >
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
+
+                    </div>
+
+                    <div className="offcanvas offcanvas-end" tabIndex="-1" id="navbarNav" aria-labelledby="navbarNavLabel">
+                        <div className="offcanvas-header border-bottom">
+                            <h5 className="offcanvas-title fw-bold" id="navbarNavLabel">My Todo APP</h5>
+
+                            <button
+                                type="button"
+                                className="btn-close"
+                                data-bs-dismiss="offcanvas"
+                                aria-label="Close"
+                            />
                         </div>
-                        <div className="drawer-body">
-                            <ul className="navbar-nav">
+
+                        <div className="offcanvas-body">
+                            <ul className="navbar-nav gap-2">
+
                                 <li className="nav-item">
-                                    <a className="nav-link active" aria-current="page" href="#">Home</a>
+                                    <Link className="nav-link active" to="/">
+                                        Home
+                                    </Link>
                                 </li>
+
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">Features</a>
+                                    <Link className="nav-link" to="/about">
+                                        About
+                                    </Link>
                                 </li>
+
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">Pricing</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link disabled" aria-disabled="true">Disabled</a>
+                                    <Link className="nav-link" to="/contact">
+                                        Contact
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
-                    </dialog>
+                    </div>
+
                 </div>
             </nav>
         </header>
